@@ -1,11 +1,11 @@
-/**
- * Receipt1.java  
- *
- * @author – Your name
- * @author – Class period
- */ 
-public class Receipt1
-{
+    /**
+     * Receipt1.java  
+     *
+     * @author – Your name
+     * @author – Class period
+     */ 
+    public class Receipt1
+    {
     public static void main(String [] args)
     {
         System.out.println("**************************************");
@@ -19,4 +19,4 @@ public class Receipt1
         System.out.println("*                                    *");    
         System.out.println("**************************************");
     }
-}
+    }
