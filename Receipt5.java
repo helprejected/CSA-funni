@@ -1,3 +1,4 @@
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -62,43 +63,41 @@ public class Receipt5
             System.out.print("How many? ");
             int quantity = input.nextInt();
 
-            if (choice == 1)
+            switch (choice)
             {
-                numDrinks += quantity;
-            }
-            else if (choice == 2)
-            {
-                numCandy += quantity;
-            }
-            else if (choice == 3)
-            {
-                numHotDogs += quantity;
-            }
-            else if (choice == 4)
-            {
-                numHamburgers += quantity;
-            }
-            else if (choice == 5)
-            {
-                numFries += quantity;
-            }
-            else if (choice == 6)
-            {
-                numPizza += quantity;
-            }
-            else
-            {
-                System.out.println("Invalid choice. Please try again.");
+                case 1:
+                    numDrinks += quantity;
+                    break;
+
+                case 2:
+                    numCandy += quantity;
+                    break;
+
+                case 3:
+                    numHotDogs += quantity;
+                    break;
+
+                case 4:
+                    numHamburgers += quantity;
+                    break;
+
+                case 5:
+                    numFries += quantity;
+                    break;
+
+                case 6:
+                    numPizza += quantity;
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
             }
         }
         
         // Tip and taxes
         System.out.print("Enter tip amount: $");
         double tip = input.nextDouble();
-        if (tip < 0)
-        {
-            tip = 0;
-        }
 
         int taxPercent = random.nextInt(10) + 1;
         double taxRate = taxPercent / 100.0;
@@ -141,7 +140,7 @@ public class Receipt5
         System.out.println("   Coupon          " + couponPercent + "%");
         System.out.println("   Tax Rate        " + taxPercent + "%");
         System.out.println();
-        System.out.println("\tQTY\tITEM\t\tTOTAL");
+        System.out.println("\tQUANTITY\tITEM\t\tTOTAL");
         System.out.println("**************************************");
 
         if (numDrinks > 0)
@@ -175,8 +174,8 @@ public class Receipt5
         {
             System.out.println("\tCoupon\t\t-" + couponDiscount + " (" + couponPercent + "%)");
         }
-        System.out.println("\tTip\t\t" + tip);
-        System.out.println("\tTax\t\t" + tax);
-        System.out.println("\tTotal\t\t" + total);
+        System.out.println("\tTip\t\t" + tip + "$");
+        System.out.println("\tTax\t\t" + tax + "$");
+        System.out.println("\tTotal\t\t" + total + "$");
     }
 }
