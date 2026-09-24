@@ -1,4 +1,3 @@
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -130,8 +129,19 @@ public class Receipt5
         tax = (int)(tax * 100) / 100.0;
         total = (int)(total * 100) / 100.0;
         
-        // Reset terminal (Found it online)
-        System.out.flush();
+        // Reset and refreshes terminal (** I FOUND THE WAY ONLINE **)
+        try
+        {
+            new ProcessBuilder("cmd", "/c", "cls")
+                .inheritIO()
+                .start()
+                .waitFor();
+        }
+        catch (Exception e)
+        {
+            System.out.println("Failed to clear terminal.");
+        }
+
 
         System.out.println("\n**************************************");
         System.out.println("*                                    *");
@@ -143,7 +153,7 @@ public class Receipt5
         System.out.println("   Coupon          " + couponPercent + "%");
         System.out.println("   Tax Rate        " + taxPercent + "%");
         System.out.println();
-        System.out.println("\tQUANTITY\tITEM\t\tTOTAL");
+        System.out.println("\t#\tITEM\t\tTOTAL");
         System.out.println("**************************************");
 
         if (numDrinks > 0)
