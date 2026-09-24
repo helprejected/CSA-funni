@@ -129,6 +129,9 @@ public class Receipt5
         discountedSubtotal = (int)(discountedSubtotal * 100) / 100.0;
         tax = (int)(tax * 100) / 100.0;
         total = (int)(total * 100) / 100.0;
+        
+        // Reset terminal (Found it online)
+        System.out.flush();
 
         System.out.println("\n**************************************");
         System.out.println("*                                    *");
