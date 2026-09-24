@@ -1,3 +1,5 @@
+// Eric did some bug testing for me and IM TOO LAZY TO ADD EXCEPTIONS for every single input.
+// TwT
 import java.util.Random;
 import java.util.Scanner;
 
@@ -58,6 +60,11 @@ public class Receipt5
             {
                 break;
             }
+            else if (choice < 1 || choice > 6)
+            {
+                System.out.println("Invalid choice. Please try again.");
+                continue;
+            }
 
             System.out.print("How many? ");
             int quantity = input.nextInt();
@@ -101,6 +108,7 @@ public class Receipt5
         int taxPercent = random.nextInt(10) + 1;
         double taxRate = taxPercent / 100.0;
 
+        // Random order number
         int orderNumber = random.nextInt(900) + 100;
 
 
@@ -130,6 +138,7 @@ public class Receipt5
         total = (int)(total * 100) / 100.0;
         
         // Reset and refreshes terminal (** I FOUND THE WAY ONLINE **)
+        // -------------------------------- Code segment found online
         try
         {
             new ProcessBuilder("cmd", "/c", "cls")
@@ -141,12 +150,12 @@ public class Receipt5
         {
             System.out.println("Failed to clear terminal.");
         }
-
+        // -------------------------------- Code segment found online
 
         System.out.println("\n**************************************");
         System.out.println("*                                    *");
         System.out.println("*              Welcome               *");
-        System.out.println("*     " + highSchoolName + " Snack Bar     *");
+        System.out.println("*\t" + highSchoolName + " Snack Bar\t\t*");
         System.out.println("*                                    *");
         System.out.println("**************************************");
         System.out.println("\n   Order Number    " + orderNumber);
